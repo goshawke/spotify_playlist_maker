@@ -1,0 +1,16 @@
+
+.form{
+    display:flex;
+    flex-direction: column;
+    width: 500px;
+    height: 100%;
+    align-self: center;
+    justify-self: center;
+    vertical-align: middle;
+}
+
+.input{
+    padding: 2px 15px;
+    margin: 10px;
+}
+

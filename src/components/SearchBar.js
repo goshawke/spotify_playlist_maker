@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
+
+import styles from '../styles/SearchBar.module.css'
 import SearchBtn from '../components/SearchBtn';
 
 function SearchBar(){
 
-    const [searchText, setSearchText] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
+
+    function handleChange(e){
+        setSearchTerm(e.target.value);
+    }
 
     return (
-        <form>
-            <input type="text" value={searchText}></input>
-            <SearchBtn searchText={searchText} />
+        <form className={styles.form}>
+            <input className={styles.input} type="text" value={searchTerm} onChange={handleChange}></input>
+            <SearchBtn searchTerm={searchTerm} />
         </form>
     );
 }
