@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 
-import style from '../styles/Track.module.css'
+import styles from '../styles/Track.module.css'
 
 function Track(props){
 
 
     return (
-        <>
-            <span><strong>{props.title}</strong></span>
-            <span>{props.artist} | {props.album}</span>
-        </>
+        <div className={styles.container}>
+            <div>
+                <h3>{props.title}</h3>
+                <p>{props.artist} | {props.album}</p>
+            </div>
+            <button className={styles.button}>+</button>
+
+        </div>
     )
 
 }

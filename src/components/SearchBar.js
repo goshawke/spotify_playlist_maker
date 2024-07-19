@@ -13,7 +13,7 @@ function SearchBar(){
 
     return (
         <form className={styles.form}>
-            <input className={styles.input} type="text" value={searchTerm} onChange={handleChange}></input>
+            <input className={styles.input} type="text" value={searchTerm} onChange={handleChange} placeholder='song, artist, album'></input>
             <SearchBtn searchTerm={searchTerm} />
         </form>
     );

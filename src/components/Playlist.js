@@ -1,18 +1,29 @@
 import React, { useState } from 'react';
 
-import style from '../styles/Playlist.module.css'
+import styles from '../styles/Playlist.module.css'
 
 import Tracklist from '../components/Tracklist';
 import SaveBtn from '../components/SaveBtn';
 
 function Playlist(){
 
+    const [playlistName, setPlaylistName] = useState('');
+
+    function handleUserInput(e){
+        setPlaylistName(e.target.value);
+    }
+
 
     return(
-        <>
-            <Tracklist />
-            <SaveBtn />
-        </>
+        <div className={styles.container}>
+            <form className={styles.form}>
+                <input type='text' value={playlistName} onChange={handleUserInput} placeholder='Your Playlist Name' />
+            </form>
+            <Tracklist className={styles.tracklist} />
+            
+            <SaveBtn className={styles.saveBtn}/>
+            
+        </div>
     )
 
 }

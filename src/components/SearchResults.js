@@ -1,20 +1,29 @@
 import React, { useState } from 'react';
 
-import style from '../styles/SearchResults.module.css'
+import styles from '../styles/SearchResults.module.css'
 
-import Tracklist from '../components/Tracklist';
+import Track from '../components/Track';
 
 
-function SearchResults(){
+function SearchResults(props){
 
-    const [tracks, setTracks] = useState([]);
+    const [tracks, setTracks] = useState(props.results);
 
 
 
     return (
-        <>
-            <Tracklist tracks={tracks}/>
-        </>
+        <div className={styles.container}>
+            <h2 className={styles.h2}>RESULTS</h2>
+            <ul>
+                {tracks.map((track)=>{
+                    return (
+                        <>
+                            <li><Track title={track.title} artist={track.artist} album={track.album} /></li>
+                        </>
+                    )
+                })}
+            </ul>
+        </div>
     )
 
 }

@@ -9,6 +9,12 @@ import Track from './components/Track'
 import SearchResults from './components/SearchResults';
 import Playlist from './components/Playlist';
 
+const sampleTracks = [
+  {artist: 'Alvvays', title: 'Party Police', album: 'Antisocialites'},
+  {artist: 'Blink-182', title: 'Dont Leave Me', album: 'Enema of State'},
+  {artist: 'Arcade Fire', title: 'Modern Man', album: 'The Suburbs'},
+  {artist: 'Death Cab For Cutie', title: 'Sound of Settling', album: 'Transatlanticism'}
+];
 
 function App() {
   return (
@@ -18,14 +24,15 @@ function App() {
         <SearchBar />
       </div>
 
-      <div>
-        <SearchResults />
-      </div>
+      <div id='main-div'>
+        <div id='results-div'>
+          <SearchResults results={sampleTracks}/>
+        </div>
 
-      <div>
-        <Playlist />
+        <div id='playlist-div'>
+          <Playlist />
+        </div>
       </div>
-
       
 
     </div>

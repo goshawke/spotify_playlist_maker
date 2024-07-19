@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 400px;
+    padding: 25px;
+    justify-content:start;
+    align-items: center;
+
+}
+
+.h2{
+    height: 50px;
+    font-size: 1.75rem;
+
+}
+
+.container ul{
+    width: 100%;
+    
+
+}
+
+.container ul li{
+    list-style:none;
+    padding-bottom: 5px;
+}

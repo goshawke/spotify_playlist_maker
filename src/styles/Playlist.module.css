@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 400px;
+    padding: 25px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.form{
+    min-height: 50px;
+}
+
+.form input{
+    padding: 5px;
+}
+
+.tracklist{
+    min-height: 200px;
+    width: 100%;
+    border: 1px black solid;
+    background-color: black;
+
+}
+
+.saveBtn{
+    position: absolute;
+    bottom: 0;
+}
