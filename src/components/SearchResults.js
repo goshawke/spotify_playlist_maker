@@ -1,24 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import styles from '../styles/SearchResults.module.css'
 
 import Track from '../components/Track';
+import Playlist from './Playlist';
 
 
 function SearchResults(props){
-
-    const [tracks, setTracks] = useState(props.results);
-
 
 
     return (
         <div className={styles.container}>
             <h2 className={styles.h2}>RESULTS</h2>
             <ul>
-                {tracks.map((track)=>{
+                {props.results.map((track, index)=>{
                     return (
                         <>
-                            <li><Track title={track.title} artist={track.artist} album={track.album} /></li>
+                            <li key={index}>
+                                <Track key={index} title={track.title} artist={track.artist} album={track.album} symbol='+'
+                                        isAdded={props.addedTracks.some(t => t.title === track.title)}  
+                                        onClick={() => props.addToPlaylist(track)}/>
+                            </li>
                         </>
                     )
                 })}

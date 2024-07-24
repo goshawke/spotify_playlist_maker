@@ -5,7 +5,7 @@ import style from '../styles/SearchBtn.module.css'
 function SearchBtn(props){
 
     function handleSubmit(){
-        const searchTerm = props.searchTerm;
+        const searchterm = props.searchTerm;
 
         const results = [];
         // use Spotify API call to search using searchTerm
@@ -15,7 +15,7 @@ function SearchBtn(props){
     }
 
     return (
-        <button className={style.button} type='submit' searchTerm={props.searchTerm} onClick={handleSubmit}>Search</button>
+        <button className={style.button} type='submit' searchTerm={props.searchterm} onClick={handleSubmit}>Search</button>
     );
 }
 

@@ -1,0 +1,11 @@
+
+.button{
+    bottom: 0;
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: black;
+    color: yellowgreen;
+    font-size: 1.25rem;
+    font-weight: bold;
+}

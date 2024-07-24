@@ -2,30 +2,34 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 400px;
+    height: 100%;
     padding: 25px;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
-
 }
 
 .form{
     min-height: 50px;
+    
 }
 
 .form input{
     padding: 5px;
-}
-
-.tracklist{
-    min-height: 200px;
-    width: 100%;
-    border: 1px black solid;
+    font-size: 1.75rem;
     background-color: black;
-
+    color: yellowgreen;
+    border: 1px white solid;
+    text-align: center;
 }
 
-.saveBtn{
-    position: absolute;
-    bottom: 0;
+.form input::placeholder {
+    color: greenyellow;
+    opacity: 1; /* Firefox */
+  }
+  
+
+.container ul li{
+    list-style:none;
+    padding-bottom: 5px;
+
 }
