@@ -119,8 +119,13 @@ async function savePlaylist(track_uris, name){
 
         if (response.ok) {
             const result = await response.json();
+
+            // testing
+            /*
             alert('Playlist created successfully!');
             alert(track_uris);
+            */
+
             await add_tracks_to_playlist(result.id, track_uris);
             return result; 
         }
@@ -151,7 +156,10 @@ async function add_tracks_to_playlist(playlist_id, track_uris){
 
         if (response.ok) {
             const result = await response.json();
-            alert('Tracks added successfully!');
+
+            // testing
+            //alert('Tracks added successfully!');
+
             return result; 
         }
         throw new Error(`Response status: ${response.status}`);

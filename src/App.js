@@ -82,7 +82,7 @@ function App() {
               <p>Redirecting to Spotify login...</p>
             ) : (
       <div>
-      <h1>Spotify Playlist Maker</h1>
+      <h1>SPOTIFY PLAYLIST MAKER</h1>
       <div id='form-container'>
         <SearchBar results={results} addToResults={addToResults} clearResults={clearResults}/>
       </div>

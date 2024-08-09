@@ -10,7 +10,12 @@ function SearchResults(props){
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.h2}>RESULTS</h2>
+            {props.results.length != 0?
+                 (<h2 className={styles.h2}>RESULTS</h2>) : (
+                    <></>
+                )
+            }
+            
             <ul>
                 {props.results.map((track, index)=>{
                     return (

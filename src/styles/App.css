@@ -6,11 +6,14 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  margin-top: 300px;
+
+  /*Variable depending on width*/
+  margin-top: 30px;
 }
 
 h1{
-  font-size: 3rem;
+  /*Variable depending on width*/
+  font-size: 1.75rem;
 }
 
 #form-container{
@@ -18,29 +21,66 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center; 
-
 }
 
 #main-div{
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
   width: 100%;
-  min-height: 600px;
-  padding: 25px;
-  gap: 25px;
+
+  /*Variable depending on width*/
+  min-height: 70%;
+
+  /*Variable depending on width*/
+  padding: 5px;
+
+  /*Variable depending on width*/
+  gap: 5px;
 }
 
 
-#results-div{
+#results-div, #playlist-div{
   min-height: 100%;
-  width: 50%;
-  border: 1px purple solid;
+
+  /*Variable depending on width*/
+  width: 100%;
+
 
 }
 
-#playlist-div{
-  min-height: 100%;
-  width: 50%;
-  border: 1px purple solid;
+
+@media only screen and (min-width: 1500px){
+  .App {
+    flex-direction: column;
+  
+    /*Variable depending on width*/
+    margin-top: 300px;
+  }
+
+  h1{
+    /*Variable depending on width*/
+    font-size: 3rem;
+  }
+
+  #main-div{
+    display: flex;
+    flex-direction: row;
+  
+    /*Variable depending on width*/
+    min-height: 600px;
+  
+    /*Variable depending on width*/
+    padding: 25px;
+  
+    /*Variable depending on width*/
+    gap: 25px;
+  }
+
+
+  #results-div, #playlist-div{
+    /*Variable depending on width*/
+    width: 50%;
+
+  }
 
 }
