@@ -11,8 +11,8 @@ function Tracklist(props){
                 {props.tracks.map((track, index)=>{
                     return (
                         <>
-                            <li key={index}>
-                                <Track key={index} title={track.title} artist={track.artist} album={track.album} symbol='-'
+                            <li>
+                                <Track key={index} uri={track.uri} title={track.title} artist={track.artist} album={track.album} symbol='-'
                                         onClick={() => props.removeFromPlaylist(track)}/>
                             </li>
                         </>

@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { getUserToken, getAccessTokenFromUrl } from './components/spotifyUtils';
 import './styles/App.css';
 
-import SearchBtn from './components/SearchBtn';
-import SaveBtn from './components/SaveBtn';
 import SearchBar from './components/SearchBar';
-import Tracklist from './components/Tracklist';
-import Track from './components/Track'
 import SearchResults from './components/SearchResults';
 import Playlist from './components/Playlist';
 
@@ -29,8 +26,19 @@ const samplePlaylistTracks = [
 
 
 function App() {
-
+  
+  const [accessToken, setAccessToken] = useState(null);
   const [playlistTracks, setPlaylistTracks] = useState([]);
+  const [results, setResults] = useState([]);
+
+  useEffect(() => {
+    const token = getAccessTokenFromUrl();
+    if (token) {
+      setAccessToken(token);
+    } else {
+      getUserToken();
+    }
+  }, []);
 
 
   const addToPlaylist = (trackToAdd) => {
@@ -45,24 +53,52 @@ function App() {
   };
 
 
+  const addToResults = (tracks) => {
+    setResults((prev) => {
+      const newTracks = tracks.filter(
+        (track) => !prev.some((existingTrack) =>
+          existingTrack.artist === track.artist &&
+          existingTrack.title === track.title &&
+          existingTrack.album === track.album
+        )
+      );
+      return [...prev, ...newTracks];
+    });
+  }
+
+  const clearResults = () => {
+    setResults([]);
+  }
+
+  useEffect(() => {
+    console.log("Results updated:", results);
+  }, [results]);
+
+
   return (
     <div className="App">
+
+      {!accessToken ? (
+              <p>Redirecting to Spotify login...</p>
+            ) : (
+      <div>
       <h1>Spotify Playlist Maker</h1>
       <div id='form-container'>
-        <SearchBar />
+        <SearchBar results={results} addToResults={addToResults} clearResults={clearResults}/>
       </div>
 
       <div id='main-div'>
         <div id='results-div'>
-          <SearchResults results={sampleTracks} addedTracks={playlistTracks} addToPlaylist={addToPlaylist}/>
+          <SearchResults results={results} addedTracks={playlistTracks} addToPlaylist={addToPlaylist}/>
         </div>
 
         <div id='playlist-div'>
           <Playlist addedTracks={playlistTracks} removeFromPlaylist={removeFromPlaylist}/>
         </div>
       </div>
-      
+      </div>)}
 
+      
     </div>
   );
 }

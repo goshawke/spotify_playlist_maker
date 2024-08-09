@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import styles from '../styles/SearchResults.module.css'
 
 import Track from '../components/Track';
-import Playlist from './Playlist';
 
 
 function SearchResults(props){
@@ -16,8 +15,8 @@ function SearchResults(props){
                 {props.results.map((track, index)=>{
                     return (
                         <>
-                            <li key={index}>
-                                <Track key={index} title={track.title} artist={track.artist} album={track.album} symbol='+'
+                            <li>
+                                <Track key={index} title={track.title} artist={track.artist} album={track.album} uri={track.uri} symbol='+'
                                         isAdded={props.addedTracks.some(t => t.title === track.title)}  
                                         onClick={() => props.addToPlaylist(track)}/>
                             </li>

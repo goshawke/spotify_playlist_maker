@@ -3,18 +3,23 @@ import React, { useState } from 'react';
 import styles from '../styles/SearchBar.module.css'
 import SearchBtn from '../components/SearchBtn';
 
-function SearchBar(){
 
-    const [searchTerm, setSearchTerm] = useState('');
+function SearchBar(props){
+
+    const [searchterm, setSearchterm] = useState('');
 
     function handleChange(e){
-        setSearchTerm(e.target.value);
+        setSearchterm(e.target.value);
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault(); // Prevent the default form submission
     }
 
     return (
-        <form className={styles.form}>
-            <input className={styles.input} type="text" value={searchTerm} onChange={handleChange} placeholder='song, artist, album'></input>
-            <SearchBtn searchTerm={searchTerm} />
+        <form name="searchbar" className={styles.form} onSubmit={handleSubmit}>
+            <input className={styles.input} type="text" value={searchterm} onChange={handleChange} placeholder='song, artist, album'></input>
+            <SearchBtn searchterm={searchterm} addToResults={props.addToResults} clearResults={props.clearResults}/>
         </form>
     );
 }
