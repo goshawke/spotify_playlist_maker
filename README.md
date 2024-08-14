@@ -73,10 +73,14 @@ To run this project locally, you will need:
 2. Navigate to the project directory:
    ```bash
    cd spotify_playlist_maker
+   
 3. Install dependencies:
-  ```bash
-  npm install
+   ```bash
+   npm install
+
 4. Start the development server:
   ```bash
-  npm start
+    npm start
+  ```
+
 5. Open your browser and go to http://localhost:3000.
