@@ -3,9 +3,11 @@
 const apiUrl = 'https://api.spotify.com';
 const client_id = "3a489fa4b5054c6cbec8c1b668716fd3";
 const client_secret = "f2606832c3254cf7942fb43c1d9d27d6";
-const redirect_uri = window.location.origin.includes('github.io') 
-    ? 'https://goshawke.github.io/spotify_playlist_maker/' 
-    : 'http://localhost:3000';
+// const redirect_uri = window.location.origin.includes('github.io') 
+//     ? 'https://goshawke.github.io/spotify_playlist_maker/' 
+//     : 'http://localhost:3000';
+
+const redirect_uri = 'https://goshawke.github.io/spotify_playlist_maker/' 
 
 
 // Gets an application-level bearer token (not user-specific)
